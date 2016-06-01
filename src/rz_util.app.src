@@ -1,0 +1,11 @@
+{application, rz_util,
+ [
+  {description, "RZ util"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, []}
+ ]}.
