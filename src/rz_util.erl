@@ -9,17 +9,18 @@
 -module(rz_util).
 -author("anechaev").
 
+-include("rz_util.hrl").
 %% API
 -export([load_instr_csv/1, load_instr_csv/3, get_env/2]).
 
 -compile([{parse_transform, lager_transform}]).
 
 %%--------------------------------------------------------------------
-%-spec load_instr_csv(FileName :: string()) -> {ok, Instrs :: [instr_name()]} | {error, Reason :: any()}.
+-spec load_instr_csv(FileName :: string()) -> {ok, Instrs :: [instr_name()]} | {error, Reason :: any()}.
 load_instr_csv(FileName) -> load_instr_csv(FileName, 1, []).
 
 %% возвращает список инструментов с удаленными дубликатами
-%-spec load_instr_csv(FileName :: string(), SkipHeaderLines :: non_neg_integer(), Defaults :: [instr_name()]) -> {ok, Instrs :: [instr_name()]} | {error, Reason :: any()}.
+-spec load_instr_csv(FileName :: string(), SkipHeaderLines :: non_neg_integer(), Defaults :: [instr_name()]) -> {ok, Instrs :: [instr_name()]} | {error, Reason :: any()}.
 load_instr_csv(FileName, SkipHeaderLines, Defaults) ->
   try
     {ok, H} = file:open(FileName, [raw, binary, read]),
