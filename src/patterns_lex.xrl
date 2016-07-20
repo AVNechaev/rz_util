@@ -17,8 +17,8 @@ Rules.
 {InstrName}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{ShortCurValue}                       : {token, {instr, TokenLine, TokenChars}}.
 
-sma50                                       : {token, {instr, TokenLine, {sma, sma50}}}.
-sma200                                      : {token, {instr, TokenLine, {sma, sma200}}}.
+sma50|SMA50                                 : {token, {instr, TokenLine, {sma, sma50}}}.
+sma200|SMA200                               : {token, {instr, TokenLine, {sma, sma200}}}.
 
 and|AND                                     : {token, {two_op_logic, TokenLine, op_and}}.
 or|OR                                       : {token, {two_op_logic, TokenLine, op_or}}.
