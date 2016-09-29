@@ -17,7 +17,7 @@ Rules.
 {InstrName}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{ShortCurValue}                       : {token, {instr, TokenLine, TokenChars}}.
 
-Instr#sma20|Instr#SMA20                                 : {token, {instr, TokenLine, {sma, sma50}}}.
+Instr#sma20|Instr#SMA20                                 : {token, {instr, TokenLine, {sma, sma20}}}.
 Instr#sma50|Instr#SMA50                                 : {token, {instr, TokenLine, {sma, sma50}}}.
 Instr#sma200|Instr#SMA200                               : {token, {instr, TokenLine, {sma, sma200}}}.
 
