@@ -3,6 +3,8 @@
 
 -type(instr_name() :: binary()).
 
+-type(sma_values() :: [{SMATextName :: string(), Value :: float()}]).
+
 -record(candle, {
   name :: instr_name(),
   open = 0 :: float(),
@@ -12,9 +14,7 @@
   vol = 0 :: float(),
   bid = 0 :: float(), % bid & ask ������������ ������ � ������� �����
   ask = 0 :: float(),
-  sma20 = 0 :: float(),
-  sma50 = 0 :: float(),
-  sma200 = 0 :: float()
+  smas = [] :: sma_values()
 }).
 
 -endif.
