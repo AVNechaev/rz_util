@@ -3,7 +3,7 @@
 
 -type(instr_name() :: binary()).
 
--type(sma_values() :: [{SMATextName :: string(), Value :: float()}]).
+-type(sma_values() :: [{SMAName :: atom(), SMATextName :: string() | binary(), Value :: float()}]).
 
 -record(candle, {
   name :: instr_name(),
