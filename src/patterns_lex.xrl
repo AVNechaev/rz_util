@@ -33,7 +33,7 @@ or|OR                                       : {token, {two_op_logic, TokenLine, 
 \%                                          : {token, {two_op_arith, TokenLine, op_rem}}.
 \+                                          : {token, {two_op_arith, TokenLine, op_plus}}.
 -                                           : {token, {two_op_arith, TokenLine, op_minus}}.
-\+                                          : {token, {two_op_arith, TokenLine, op_multiply}}.
+\*                                          : {token, {two_op_arith, TokenLine, op_multiply}}.
 \/                                          : {token, {two_op_arith, TokenLine, op_divide}}.
 \(                                          : {token, {open_bracket, TokenLine, none}}.
 \)                                          : {token, {close_bracket, TokenLine, none}}.
