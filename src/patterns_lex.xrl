@@ -1,5 +1,6 @@
 Definitions.
 
+VarChar = [a-zA-Z]
 D = [0-9]
 Frame = (D|H[1-9]|[1-9]|[1-9][0-9])
 Cmp = (>|<|>=|<=|=)
@@ -13,6 +14,7 @@ InstrName = (Instr|SNP)
 
 Rules.
 
+
 {InstrName}#{Frame},1#{CurValue}                  : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{ShortCurValue}                       : {token, {instr, TokenLine, TokenChars}}.
@@ -23,6 +25,8 @@ Instr#{Frame}#sma200|Instr#{Frame}#SMA200         : {token, {instr, TokenLine, {
 
 and|AND                                     : {token, {two_op_logic, TokenLine, op_and}}.
 or|OR                                       : {token, {two_op_logic, TokenLine, op_or}}.
+
+:\=                                         : {token, {assignment, TokenLine, none}}.
 
 {Cmp}                                       : {token, {comparator, TokenLine, TokenChars}}.
 
@@ -37,6 +41,8 @@ or|OR                                       : {token, {two_op_logic, TokenLine, 
 \/                                          : {token, {two_op_arith, TokenLine, op_divide}}.
 \(                                          : {token, {open_bracket, TokenLine, none}}.
 \)                                          : {token, {close_bracket, TokenLine, none}}.
+\;                                          : {token, {var_divider, TokenLine, none}}.
+{VarChar}+                                  : {token, {variable, TokenLine, TokenChars}}.
 
 {WS}+                                       : skip_token.
 
