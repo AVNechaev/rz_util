@@ -29,5 +29,5 @@ arith_value -> constant : '$1'.
 arith_value -> instr : '$1'.
 arith_value -> open_bracket arith_value close_bracket : '$2'.
 
-var_list -> variable assignment instr : {'$1', '$3', undefined}.
-var_list -> variable assignment instr var_divider var_list : {'$1', '$3', '$5'}.
+var_list -> variable assignment arith_value : {'$1', '$3', undefined}.
+var_list -> variable assignment arith_value var_divider var_list : {'$1', '$3', '$5'}.
