@@ -7,13 +7,13 @@
 
 -record(candle, {
   name :: instr_name(),
-  open = 0 :: float(),
-  close = 0 :: float(),
-  high = 0 :: float(),
-  low = 0 :: float(),
-  vol = 0 :: float(),
-  bid = 0 :: float(), % bid & ask ������������ ������ � ������� �����
-  ask = 0 :: float(),
+  open = 0.0 :: float(),
+  close = 0.0 :: float(),
+  high = 0.0 :: float(),
+  low = 0.0 :: float(),
+  vol = 0 :: integer(),
+  bid = 0.0 :: float(), % bid & ask ������������ ������ � ������� �����
+  ask = 0.0 :: float(),
   smas = [] :: sma_values()
 }).
 
