@@ -11,6 +11,8 @@ HistValue = (OPEN|CLOSE|HIGH|LOW|VOLUME)
 CurValue = (OPEN|PRICE|HIGH|LOW|BID|ASK|VOLUME)
 ShortCurValue = (Price|Bid|Ask)
 InstrName = (Instr|SNP)
+FixedName = ({VarChar}+|{VarChar}+\.{VarChar}+)
+FixedInstr = (FIXED_{FixedName})
 
 Rules.
 
@@ -18,6 +20,10 @@ Rules.
 {InstrName}#{Frame},1#{CurValue}                  : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{ShortCurValue}                       : {token, {instr, TokenLine, TokenChars}}.
+
+{FixedInstr}#{Frame},1#{CurValue}                  : {token, {instr, TokenLine, {fixed, TokenChars}}}.
+{FixedInstr}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, {fixed, TokenChars}}}.
+{FixedInstr}#{ShortCurValue}                       : {token, {instr, TokenLine, {fixed, TokenChars}}}.
 
 Instr#{Frame}#sma20|Instr#{Frame}#SMA20           : {token, {instr, TokenLine, {sma, sma20, TokenChars}}}.
 Instr#{Frame}#sma50|Instr#{Frame}#SMA50           : {token, {instr, TokenLine, {sma, sma50, TokenChars}}}.
