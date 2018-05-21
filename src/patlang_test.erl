@@ -27,7 +27,8 @@ hist_pattern_test() ->
   ].
 arith_test() ->
   [
-    ?assertEqual(ok, compile_pattern("((Instr#D,3#OPEN * 2) % (Instr#D,3#CLOSE / 4)) > 5"))
+    ?assertEqual(ok, compile_pattern("((Instr#D,3#OPEN * 2) % (Instr#D,3#CLOSE / 4)) > 5")),
+    ?assertEqual(ok, compile_pattern("3 < ((Instr#D,3#OPEN * 2) + (8 % Instr#D,3#CLOSE))"))
   ].
 fixed_test() ->
   [
