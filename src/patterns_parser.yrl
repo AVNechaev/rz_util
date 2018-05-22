@@ -1,6 +1,6 @@
 Nonterminals pattern logic_value arith_value var_list.
 
-Terminals instr two_op_logic comparator constant two_op_arith open_bracket close_bracket var_divider variable assignment.
+Terminals instr fixed_instr two_op_logic comparator constant two_op_arith open_bracket close_bracket var_divider variable assignment.
 
 Rootsymbol pattern.
 
@@ -19,6 +19,7 @@ arith_value -> arith_value two_op_arith arith_value : {'$2', '$1', '$3'}.
 
 arith_value -> constant : '$1'.
 arith_value -> instr : '$1'.
+arith_value -> fixed_instr : '$1'.
 arith_value -> open_bracket arith_value close_bracket : '$2'.
 
 var_list -> variable assignment arith_value : {'$1', '$3', undefined}.

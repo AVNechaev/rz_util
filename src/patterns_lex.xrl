@@ -21,9 +21,9 @@ Rules.
 {InstrName}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, TokenChars}}.
 {InstrName}#{ShortCurValue}                       : {token, {instr, TokenLine, TokenChars}}.
 
-{FixedInstr}#{Frame},1#{CurValue}                  : {token, {instr, TokenLine, {fixed, TokenChars}}}.
-{FixedInstr}#{Frame},{HistOffset}#{HistValue}      : {token, {instr, TokenLine, {fixed, TokenChars}}}.
-{FixedInstr}#{ShortCurValue}                       : {token, {instr, TokenLine, {fixed, TokenChars}}}.
+{FixedInstr}#{Frame},1#{CurValue}                  : {token, {fixed_instr, TokenLine, TokenChars}}.
+{FixedInstr}#{Frame},{HistOffset}#{HistValue}      : {token, {fixed_instr, TokenLine, TokenChars}}.
+{FixedInstr}#{ShortCurValue}                       : {token, {fixed_instr, TokenLine, TokenChars}}.
 
 Instr#{Frame}#sma20|Instr#{Frame}#SMA20           : {token, {instr, TokenLine, {sma, sma20, TokenChars}}}.
 Instr#{Frame}#sma50|Instr#{Frame}#SMA50           : {token, {instr, TokenLine, {sma, sma50, TokenChars}}}.
