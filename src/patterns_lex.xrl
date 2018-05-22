@@ -10,7 +10,7 @@ HistOffset = ([2-9]|1[0-9]|2[0-2])
 HistValue = (OPEN|CLOSE|HIGH|LOW|VOLUME)
 CurValue = (OPEN|PRICE|HIGH|LOW|BID|ASK|VOLUME)
 ShortCurValue = (Price|Bid|Ask)
-InstrName = (Instr|SNP)
+InstrName = Instr
 FixedName = ({VarChar}+|{VarChar}+\.{VarChar}+)
 FixedInstr = (FIXED_{FixedName})
 
