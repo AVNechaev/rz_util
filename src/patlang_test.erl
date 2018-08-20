@@ -47,6 +47,11 @@ varpath_test() ->
     ?assertEqual(ok, compile_pattern("Instr#D,1#PRICE > 0;SomeVar:=Instr#Price;AnotherVar:=FIXED_DDX#D,2#CLOSE"))
   ].
 
+neg_constant_test() ->
+  [
+    ?assertEqual(ok, compile_pattern("((Instr#D,3#OPEN * (-2.001)) % (Instr#D,3#CLOSE / -4.3)) > 5,25"))
+  ].
+
 compile_pattern(Text) ->
   {ok, Tokens, _} = patterns_lex:string(Text),
   {ok, {_, _}} = patterns_parser:parse(Tokens),
