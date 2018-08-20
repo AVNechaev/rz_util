@@ -23,7 +23,8 @@ current_pattern_test() ->
   ].
 hist_pattern_test() ->
   [
-    ?assertEqual(ok, compile_pattern("Instr#D,2#OPEN > Instr#D,3#CLOSE"))
+    ?assertEqual(ok, compile_pattern("Instr#D,2#OPEN > Instr#D,3#CLOSE")),
+    ?assertEqual(ok, compile_pattern("Instr#30,2#OPEN > Instr#152,3#CLOSE"))
   ].
 arith_test() ->
   [
