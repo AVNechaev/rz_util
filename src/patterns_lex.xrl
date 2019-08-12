@@ -13,6 +13,8 @@ ShortCurValue = (Price|Bid|Ask)
 InstrName = Instr
 FixedName = ({VarChar}+|{VarChar}+\.{VarChar}+)
 FixedInstr = (FIXED_{FixedName})
+TimeCodeName = TC
+TimeCodeValue = {VarChar}+
 
 Rules.
 
@@ -54,6 +56,8 @@ or|OR                                       : {token, {two_op_logic, TokenLine, 
 \)                                          : {token, {close_bracket, TokenLine, none}}.
 \;                                          : {token, {var_divider, TokenLine, none}}.
 {VarChar}+                                  : {token, {variable, TokenLine, TokenChars}}.
+
+{TimeCodeName}:\={TimeCodeValue}              : {token, {time_code, TokenLine, TokenChars}}.
 
 {WS}+                                       : skip_token.
 
